@@ -4,7 +4,7 @@ from math import ceil
 # Função para calcular o valor monetário
 def valor_da_tonelada(co):
     
-    media_valor_credito = 70.10 # Média dos últimos 12 meses na bolsa de valores
+    media_valor_credito = (70.10 * 5.6165) # Média dos últimos 12 meses na bolsa de valores multiplicado pelo valor da média do euro
     valor = co * media_valor_credito
 
     return valor
