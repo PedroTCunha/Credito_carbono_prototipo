@@ -55,9 +55,6 @@ def calc_veiculo(CO_ALCOOL, CO_DIESEL, CO_GAS_NATURAL, CO_GASOLINA, opcao_veicul
             Árvores à replantar: {ceil(arvores(anual))}
             Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
-            print ("\nRetornando ao Menu\n")
-            break
-
         #Gasolina 1.5
         elif (opcao_veiculo == "g2"):
             km = int (input ("Digite sua kilometragem mensal: "))
@@ -67,11 +64,12 @@ def calc_veiculo(CO_ALCOOL, CO_DIESEL, CO_GAS_NATURAL, CO_GASOLINA, opcao_veicul
             credito = emissao / 1000
             anual = credito * 12
 
-            print (f"=== Sua emissão de carbono com um veículo 1.5 à 2.0 a gasolina foi de {round (emissao, 3)}, o que gerou o crédito em tonelada de CO2 de {round (credito, 3)}. ===")
+            print (f'''Resultado:
+            Toneladas de CO2 por mês: {round(credito, 3)}
+            Toneladas de CO2 por ano: {round(anual, 3)}
+            Árvores à replantar: {ceil(arvores(anual))}
+            Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
-            print ("\nRetornando ao Menu\n")
-
-            break
 
         #Gasolina 2.0
         elif (opcao_veiculo == "g3"):
@@ -80,12 +78,14 @@ def calc_veiculo(CO_ALCOOL, CO_DIESEL, CO_GAS_NATURAL, CO_GASOLINA, opcao_veicul
             consumo = km / 7.2
             emissao = consumo * CO_GASOLINA
             credito = emissao / 1000
+            anual = credito * 12
 
-            print (f"=== Sua emissão de carbono com um veículo acima de 2.0 a gasolina foi de {round (emissao, 3)}, o que gerou o crédito em tonelada de CO2 de {round (credito, 3)}. ===")
+            print (f'''Resultado:
+            Toneladas de CO2 por mês: {round(credito, 3)}
+            Toneladas de CO2 por ano: {round(anual, 3)}
+            Árvores à replantar: {ceil(arvores(anual))}
+            Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
-            print ("\nRetornando ao Menu\n")
-
-            break
 
         #Álcool 1.4
         elif (opcao_veiculo == "a1"):
@@ -94,12 +94,14 @@ def calc_veiculo(CO_ALCOOL, CO_DIESEL, CO_GAS_NATURAL, CO_GASOLINA, opcao_veicul
             consumo = km / 6.7
             emissao = consumo * CO_ALCOOL
             credito = emissao / 1000
+            anual = credito * 12
 
-            print (f"=== Sua emissão de carbono com um veículo até 1.4 a álcool foi de {round (emissao, 3)}, o que gerou o crédito em tonelada de CO2 de {round (credito, 3)}. ===")
+            print (f'''Resultado:
+            Toneladas de CO2 por mês: {round(credito, 3)}
+            Toneladas de CO2 por ano: {round(anual, 3)}
+            Árvores à replantar: {ceil(arvores(anual))}
+            Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
-            print ("\nRetornando ao Menu\n")
-
-            break
 
         #Álcool 1.5
         elif (opcao_veiculo == "a2"):
@@ -108,12 +110,14 @@ def calc_veiculo(CO_ALCOOL, CO_DIESEL, CO_GAS_NATURAL, CO_GASOLINA, opcao_veicul
             consumo = km / 6.1
             emissao = consumo * CO_ALCOOL
             credito = emissao / 1000
+            anual = credito * 12
 
-            print (f"=== Sua emissão de carbono com um veículo 1.5 à 2.0 a álcool foi de {round (emissao, 3)}, o que gerou o crédito em tonelada de CO2 de {round (credito, 3)}. ===")
+            print (f'''Resultado:
+            Toneladas de CO2 por mês: {round(credito, 3)}
+            Toneladas de CO2 por ano: {round(anual, 3)}
+            Árvores à replantar: {ceil(arvores(anual))}
+            Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
-            print ("\nRetornando ao Menu\n")
-
-            break
 
         #Álcool 2.0
         elif (opcao_veiculo == "a3"):
@@ -122,12 +126,14 @@ def calc_veiculo(CO_ALCOOL, CO_DIESEL, CO_GAS_NATURAL, CO_GASOLINA, opcao_veicul
             consumo = km / 5.7
             emissao = consumo * CO_ALCOOL
             credito = emissao / 1000
+            anual = credito * 12
 
-            print (f"=== Sua emissão de carbono com um veículo acima de 2.0 a álcool foi de {round (emissao, 3)}, o que gerou o crédito em tonelada de CO2 de {round (credito, 3)}. ===")
+            print (f'''Resultado:
+            Toneladas de CO2 por mês: {round(credito, 3)}
+            Toneladas de CO2 por ano: {round(anual, 3)}
+            Árvores à replantar: {ceil(arvores(anual))}
+            Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
-            print ("\nRetornando ao Menu\n")
-
-            break
 
         #Gás Natural
         elif (opcao_veiculo == "gn"):
@@ -135,20 +141,23 @@ def calc_veiculo(CO_ALCOOL, CO_DIESEL, CO_GAS_NATURAL, CO_GASOLINA, opcao_veicul
 
             emissao = km * CO_GAS_NATURAL
             credito = emissao / 1000
+            anual = credito * 12
 
-            print (f"=== Sua emissão de carbono com um veículo a gás natural foi de {round (emissao, 3)}, o que gerou o crédito em tonelada de CO2 de {round (credito, 3)}. === ")
+            print (f'''Resultado:
+            Toneladas de CO2 por mês: {round(credito, 3)}
+            Toneladas de CO2 por ano: {round(anual, 3)}
+            Árvores à replantar: {ceil(arvores(anual))}
+            Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
-            print ("\nRetornando ao Menu\n")
-
-            break
-
+ 
         elif (opcao_veiculo == "mp"):
             print ("\nRetornando ao Menu\n")
-
             break
 
         else:
             print ("@@@ Opção Inválida! @@@")
+
+        opcao_veiculo = input("Digite novamente a opção: ")
 
 
 #Função Cálculo de emissão de carbono por energia
@@ -164,12 +173,14 @@ def calc_energia (CO_ENERGIA, opcao_energia):
 
             emissao = kwh * CO_ENERGIA
             credito = emissao / 1000
+            anual = credito * 12
 
-            print (f"=== Sua emissão de carbono por kilowhatts mensal foi de {round (emissao, 3)}, o que gerou o crédito em tonelada de CO2 de {round (credito, 3)}. ===")
+            print (f'''Resultado:
+            Toneladas de CO2 por mês: {round(credito, 3)}
+            Toneladas de CO2 por ano: {round(anual, 3)}
+            Árvores à replantar: {ceil(arvores(anual))}
+            Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
-            print ("\nRetornando ao Menu\n")
-
-            break
 
         #Energia por conta
         elif (opcao_energia == "ec"):
@@ -178,11 +189,13 @@ def calc_energia (CO_ENERGIA, opcao_energia):
             conversao = reais / 0.37
             emissao = conversao * CO_ENERGIA
             credito = emissao / 1000
+            anual = credito * 12
 
-            print (f"=== Sua emissão de carbono pela sua conta de luz foi de {round (emissao, 3)}, o que gerou o crédito em tonelada de CO2 de {round (credito, 3)}. ===")
-
-            print ("\nRetornando ao Menu\n")
-            break
+            print (f'''Resultado:
+            Toneladas de CO2 por mês: {round(credito, 3)}
+            Toneladas de CO2 por ano: {round(anual, 3)}
+            Árvores à replantar: {ceil(arvores(anual))}
+            Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
 
         elif (opcao_energia == "mp"):
@@ -192,6 +205,7 @@ def calc_energia (CO_ENERGIA, opcao_energia):
         else:
             print ("@@@ Opção Inválida! @@@")
 
+        opcao_energia = input("Digite novamente a opção: ")
 
 #Função principal
 
@@ -236,7 +250,7 @@ def main():
 
 
         elif (opcao == "e"):
-            print ("\n","Menu de tipo de veículos".center(40, "="))
+            print ("\n","Menu de tipo de energia".center(40, "="))
             menu_energia = ("""
             Selecione o tipo de energia!!!
             =============================
