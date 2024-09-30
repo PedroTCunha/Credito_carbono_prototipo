@@ -206,6 +206,7 @@ def calc_energia (CO_ENERGIA, opcao_energia):
             conversao = reais / 0.37
             emissao = conversao * CO_ENERGIA
             credito = emissao / 1000
+            anual = credito * 12
 
             print (f'''Resultado:
             Toneladas de CO2 por mês: {round(credito, 3)}
