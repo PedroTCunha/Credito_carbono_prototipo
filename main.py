@@ -1,9 +1,17 @@
+
 from textwrap import dedent
 from math import ceil
 
+# Função de custo da árvore
+def valor_arvore(co):
+    arvore = ceil(arvores(co))
+    custo = 35
+    total = arvore * custo
+
+    return total
+
 # Função para calcular o valor monetário
 def valor_da_tonelada(co):
-    
     media_valor_credito = (70.10 * 5.6165) # Média dos últimos 12 meses na bolsa de valores multiplicado pelo valor da média do euro
     valor = co * media_valor_credito
 
@@ -11,8 +19,8 @@ def valor_da_tonelada(co):
 
 # Função de compensação das Árvores
 def arvores(co):
-    absorcao_co2 = 0.36485 # Cálculo baseado do site IDESAM
-    arvore = co / absorcao_co2
+    absorcao_co2 = 303 # Cálculo baseado do site IDESAM
+    arvore = (co * 840) / absorcao_co2
 
     return arvore
 
@@ -53,10 +61,8 @@ def calc_veiculo(CO_ALCOOL, CO_DIESEL, CO_GAS_NATURAL, CO_GASOLINA, opcao_veicul
             Toneladas de CO2 por mês: {round(credito, 3)}
             Toneladas de CO2 por ano: {round(anual, 3)}
             Árvores à replantar: {ceil(arvores(anual))}
+            Custo: R${round(valor_arvore(anual), 2)}
             Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
-
-            print ("\nRetornando ao Menu\n")
-            break
 
         #Gasolina 1.5
         elif (opcao_veiculo == "g2"):
@@ -71,10 +77,9 @@ def calc_veiculo(CO_ALCOOL, CO_DIESEL, CO_GAS_NATURAL, CO_GASOLINA, opcao_veicul
             Toneladas de CO2 por mês: {round(credito, 3)}
             Toneladas de CO2 por ano: {round(anual, 3)}
             Árvores à replantar: {ceil(arvores(anual))}
+            Custo: R${round(valor_arvore(anual), 2)}
             Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
-            print ("\nRetornando ao Menu\n")
-            break
 
         #Gasolina 2.0
         elif (opcao_veiculo == "g3"):
@@ -89,10 +94,9 @@ def calc_veiculo(CO_ALCOOL, CO_DIESEL, CO_GAS_NATURAL, CO_GASOLINA, opcao_veicul
             Toneladas de CO2 por mês: {round(credito, 3)}
             Toneladas de CO2 por ano: {round(anual, 3)}
             Árvores à replantar: {ceil(arvores(anual))}
+            Custo: R${round(valor_arvore(anual), 2)}
             Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
-            print ("\nRetornando ao Menu\n")
-            break
 
         #Álcool 1.4
         elif (opcao_veiculo == "a1"):
@@ -107,10 +111,9 @@ def calc_veiculo(CO_ALCOOL, CO_DIESEL, CO_GAS_NATURAL, CO_GASOLINA, opcao_veicul
             Toneladas de CO2 por mês: {round(credito, 3)}
             Toneladas de CO2 por ano: {round(anual, 3)}
             Árvores à replantar: {ceil(arvores(anual))}
+            Custo: R${round(valor_arvore(anual), 2)}
             Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
-            print ("\nRetornando ao Menu\n")
-            break
 
         #Álcool 1.5
         elif (opcao_veiculo == "a2"):
@@ -125,10 +128,9 @@ def calc_veiculo(CO_ALCOOL, CO_DIESEL, CO_GAS_NATURAL, CO_GASOLINA, opcao_veicul
             Toneladas de CO2 por mês: {round(credito, 3)}
             Toneladas de CO2 por ano: {round(anual, 3)}
             Árvores à replantar: {ceil(arvores(anual))}
+            Custo: R${round(valor_arvore(anual), 2)}
             Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
-            print ("\nRetornando ao Menu\n")
-            break
 
         #Álcool 2.0
         elif (opcao_veiculo == "a3"):
@@ -143,10 +145,9 @@ def calc_veiculo(CO_ALCOOL, CO_DIESEL, CO_GAS_NATURAL, CO_GASOLINA, opcao_veicul
             Toneladas de CO2 por mês: {round(credito, 3)}
             Toneladas de CO2 por ano: {round(anual, 3)}
             Árvores à replantar: {ceil(arvores(anual))}
+            Custo: R${round(valor_arvore(anual), 2)}
             Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
-            print ("\nRetornando ao Menu\n")
-            break
 
         #Gás Natural
         elif (opcao_veiculo == "gn"):
@@ -160,11 +161,10 @@ def calc_veiculo(CO_ALCOOL, CO_DIESEL, CO_GAS_NATURAL, CO_GASOLINA, opcao_veicul
             Toneladas de CO2 por mês: {round(credito, 3)}
             Toneladas de CO2 por ano: {round(anual, 3)}
             Árvores à replantar: {ceil(arvores(anual))}
+            Custo: R${round(valor_arvore(anual), 2)}
             Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
-            print ("\nRetornando ao Menu\n")
-            break
- 
+
         elif (opcao_veiculo == "mp"):
             print ("\nRetornando ao Menu\n")
             break
@@ -194,10 +194,9 @@ def calc_energia (CO_ENERGIA, opcao_energia):
             Toneladas de CO2 por mês: {round(credito, 3)}
             Toneladas de CO2 por ano: {round(anual, 3)}
             Árvores à replantar: {ceil(arvores(anual))}
+            Custo: R${round(valor_arvore(anual), 2)}
             Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
 
-            print ("\nRetornando ao Menu\n")
-            break
 
         #Energia por conta
         elif (opcao_energia == "ec"):
@@ -212,10 +211,8 @@ def calc_energia (CO_ENERGIA, opcao_energia):
             Toneladas de CO2 por mês: {round(credito, 3)}
             Toneladas de CO2 por ano: {round(anual, 3)}
             Árvores à replantar: {ceil(arvores(anual))}
+            Custo: R${round(valor_arvore(anual), 2)}
             Valor monetário do Crédito de Carbono: R${round(valor_da_tonelada(anual),2)}''')
-            
-            print ("\nRetornando ao Menu\n")
-            break
 
 
         elif (opcao_energia == "mp"):
